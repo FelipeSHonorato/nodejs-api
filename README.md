@@ -21,7 +21,7 @@ Módulos adicionais:
 
 A aplicação após ser clonada através do prompt ou de uma IDE, como Visual Studio Code, deve ser executado o seguinte comando no console:
 
-`npm start:dev`
+`npm run start:dev`
 
 Caso tudo proceda corretamente as mensagens "Rodando com express na porta 8080" e "Conexão com banco de dados criada com sucesso!" deverão aparecer no console.
 
