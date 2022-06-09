@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FelipeSHonorato/nodejs-api#readme",
   "dependencies": {
+    "express": "^4.18.1",
     "moongose": "^1.0.0",
     "nodemon": "^2.0.16"
   }
