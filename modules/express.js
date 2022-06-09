@@ -16,30 +16,26 @@ app.get("/users", async (req, res) => {
     const users = await UserModel.find({});
     res.status(200).json(users);
   } catch (error) {
-    res
-      .status(500)
-      .send(error.message, "Ocorreu um erro ao buscar usuários cadastrados");
+    res.status(500).send(error.message);
   }
 });
 
-app.get("users/:id", async (req, res) => {
+app.get("/users/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const user = await UserModel.findById(id);
     res.status(200).json(user);
   } catch (error) {
-    res.status(500).send(error.message, "Ocorreu um erro ao buscar um usuário");
+    res.status(500).send(error.message);
   }
 });
 
-app.post("users", async (req, res) => {
+app.post("/users", async (req, res) => {
   try {
     const user = await UserModel.create(req.body);
     res.status(201).json(user);
   } catch (error) {
-    res
-      .status(500)
-      .send(error.message, "Ocorreu um erro ao criar um novo usuário");
+    res.status(500).send(error.message);
   }
 });
 
@@ -49,7 +45,7 @@ app.patch("/users/:id", async (req, res) => {
     const user = await UserModel.findByIdAndUpdate(id, req.body, { new: true });
     res.status(200).json(user);
   } catch (error) {
-    res.status(500).send(error.message, "Ocorreu um erro ao editar usuário");
+    res.status(500).send(error.message);
   }
 });
 
@@ -59,7 +55,7 @@ app.delete("/users/:id", async (req, res) => {
     const user = await UserModel.findByIdAndRemove(id);
     res.status(200).json(user);
   } catch (error) {
-    res.status(500).send(error.message, "Ocorreu um erro ao deletar o usuário");
+    res.status(500).send(error.message);
   }
 });
 
