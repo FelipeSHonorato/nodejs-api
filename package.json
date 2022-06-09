@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/FelipeSHonorato/nodejs-api/issues"
   },
-  "homepage": "https://github.com/FelipeSHonorato/nodejs-api#readme"
+  "homepage": "https://github.com/FelipeSHonorato/nodejs-api#readme",
+  "dependencies": {
+    "moongose": "^1.0.0",
+    "nodemon": "^2.0.16"
+  }
 }
