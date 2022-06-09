@@ -24,14 +24,16 @@ A aplicação após ser clonada através do prompt ou de uma IDE, como Visual St
 
 Caso tudo proceda corretamente as mensagens "Rodando com express na porta 8080" e "Conexão com banco de dados criada com sucesso!" deverão aparecer no console.
 
+No caso da porta 8080 já esteja sendo utilizada pelo computador, poderá ser efetuada a modificação da porta de comunicação alterando a const port do arquivo express.js.
+
 Agora através de um programa de testes funcionais, como Postman, é possível utilizar os endpoints da aplicação.
 
 ---
 
 Endpoints disponíveis nessa aplicação:
 
-* Buscar todos os usuários cadastrados no banco de dados
-* Buscar um usuário través do seu id
-* Cadastrar um novo usuário
-* Editar campos de um usuário existente
-* Deletar um usuário do banco de dados
+* Buscar todos os usuários cadastrados no banco de dados (Get, "/users")
+* Buscar um usuário través do seu id (Get, "/users/id")
+* Cadastrar um novo usuário (Post, "/users")
+* Editar campos de um usuário existente (Patch, "/users/id")
+* Deletar um usuário do banco de dados (Delete, "/users/id")
