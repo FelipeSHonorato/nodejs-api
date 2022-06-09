@@ -13,6 +13,7 @@ Módulos adicionais:
 * Nodemon
 * Dotenv
 * NPM
+* Mongoose
 
 ---
 
