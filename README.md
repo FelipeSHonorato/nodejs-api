@@ -24,7 +24,7 @@ A aplicação após ser clonada através do prompt ou de uma IDE, como Visual St
 
 Caso tudo proceda corretamente as mensagens "Rodando com express na porta 8080" e "Conexão com banco de dados criada com sucesso!" deverão aparecer no console.
 
-No caso da porta 8080 já esteja sendo utilizada pelo computador, poderá ser efetuada a modificação da porta de comunicação alterando a const port do arquivo express.js.
+No caso da porta 8080 já esteja sendo utilizada pelo computador, poderá ser efetuada a modificação da porta de comunicação alterando a const port do arquivo express.js localizado na pasta modules do projeto.
 
 Agora através de um programa de testes funcionais, como Postman, é possível utilizar os endpoints da aplicação.
 
