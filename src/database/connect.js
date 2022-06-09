@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const connectToDatabase = async () => {
   await mongoose.connect(
-    `mongodb+srv://admin:<password>@nodejs.pel89.mongodb.net/?retryWrites=true&w=majority`,
+    `mongodb+srv://${process.env.MONGODB_USUARIO}:${process.env.MONGODB_PASSWORD}@nodejs.pel89.mongodb.net/?retryWrites=true&w=majority`,
     (error) => {
       if (error) {
         return console.log(
