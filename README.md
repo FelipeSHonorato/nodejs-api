@@ -38,3 +38,18 @@ Endpoints disponíveis nessa aplicação:
 * Cadastrar um novo usuário (Post, "/users")
 * Editar campos de um usuário existente (Patch, "/users/id")
 * Deletar um usuário do banco de dados (Delete, "/users/id")
+
+---
+
+Para criação de um novo usuário deve ser utilizado o padrão de comunicação JSON e sua estrutura de dados deve seguir conforme imagem abaixo:
+
+![image](https://user-images.githubusercontent.com/21232079/172928700-3fd562a3-b323-4b94-bff4-277117f5a26e.png)
+
+Obs.: A quantidade de caracteres foi padronizada para no mínimo 7 caracteres, sendo eles string ou numbers.
+
+O código de identificação do usuário é criado por padrão automaticamente pelo banco de dados MongoDB, após o registro do novo usuário o sistema retorna os dados do usuário cadastrado assim como seu id no banco de dados, conforme imagem abaixo:
+
+![image](https://user-images.githubusercontent.com/21232079/172929650-bce98827-d986-41f8-aaf6-789a35701739.png)
+
+
+
