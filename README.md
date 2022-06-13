@@ -1,6 +1,6 @@
-# PROJETO - CRIAÇÃO DE UMA API CRUD COM NODE.JS e MONGODB
+# PROJETO - API REST COM NODE.JS e MONGODB
 
-Projeto exemplificando a criação de uma API CRUD simples simulando o cadastro de novos usuários em um sistema.
+Projeto exemplificando a criação de uma API Rest simulando o cadastro de novos usuários em um sistema.
 
 Tecnologias utilizadas no desenvolvimento deste projeto:
 
@@ -40,6 +40,7 @@ Endpoints disponíveis nessa aplicação:
 * Deletar um usuário do banco de dados (Delete, "/users/id")
 
 ---
+# Inserindo um novo usuário no banco de dados
 
 Para criação de um novo usuário deve ser utilizado o padrão de comunicação JSON e sua estrutura de dados deve seguir conforme imagem abaixo:
 
