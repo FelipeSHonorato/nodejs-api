@@ -14,6 +14,9 @@ Módulos adicionais:
 - Dotenv
 - NPM
 - Mongoose
+- Bcrypt
+- JsonWebtoken
+- ExpressAsyncHandler
 
 ---
 
