@@ -1,8 +1,10 @@
 const express = require("express");
 const UserModel = require("../src/models/user.model");
+const userRoutes = require("../src/routes/user.routes");
 
 const app = express();
 
+app.use("/users", userRoutes);
 app.use(express.json());
 app.use((req, res, next) => {
   console.log(`Request Type:${req.method}`);
