@@ -4,16 +4,16 @@ Projeto exemplificando a criação de uma API Rest simulando o cadastro de novos
 
 Tecnologias utilizadas no desenvolvimento deste projeto:
 
-* Node.JS
-* Express(framework)
-* MongoDB
+- Node.JS
+- Express(framework)
+- MongoDB
 
 Módulos adicionais:
 
-* Nodemon
-* Dotenv
-* NPM
-* Mongoose
+- Nodemon
+- Dotenv
+- NPM
+- Mongoose
 
 ---
 
@@ -27,19 +27,20 @@ Caso tudo proceda corretamente as mensagens "Rodando com express na porta 8080" 
 
 No caso da porta 8080 já esteja sendo utilizada pelo computador, poderá ser efetuada a modificação da porta de comunicação alterando a const port do arquivo express.js localizado na pasta modules do projeto.
 
-Agora através de um programa de testes funcionais, como Postman, é possível utilizar os endpoints da aplicação.
+Agora através de um programa de testes funcionais, como Postman, ou mesmo através do browser, é possível utilizar os endpoints da aplicação.
 
 ---
 
 Endpoints disponíveis nessa aplicação:
 
-* Buscar todos os usuários cadastrados no banco de dados (Get, "/users")
-* Buscar um usuário través do seu id (Get, "/users/id")
-* Cadastrar um novo usuário (Post, "/users")
-* Editar campos de um usuário existente (Patch, "/users/id")
-* Deletar um usuário do banco de dados (Delete, "/users/id")
+- Buscar todos os usuários cadastrados no banco de dados (Get, "/users")
+- Buscar um usuário través do seu id (Get, "/users/id")
+- Cadastrar um novo usuário (Post, "/users")
+- Editar campos de um usuário existente (Patch, "/users/id")
+- Deletar um usuário do banco de dados (Delete, "/users/id")
 
 ---
+
 # Inserindo um novo usuário no banco de dados
 
 Para criação de um novo usuário deve ser utilizado o padrão de comunicação JSON e sua estrutura de dados deve seguir conforme imagem abaixo:
@@ -51,6 +52,3 @@ Obs.: A quantidade de caracteres foi padronizada para no mínimo 7 caracteres, s
 O código de identificação do usuário é criado por padrão automaticamente pelo banco de dados MongoDB, após o registro do novo usuário o sistema retorna os dados do usuário cadastrado assim como seu id no banco de dados, conforme imagem abaixo:
 
 ![image](https://user-images.githubusercontent.com/21232079/172929650-bce98827-d986-41f8-aaf6-789a35701739.png)
-
-
-
