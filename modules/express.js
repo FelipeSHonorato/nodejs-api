@@ -3,6 +3,7 @@ const UserModel = require("../src/models/user.model");
 
 const app = express();
 
+app.set("views", "src/views");
 app.use(express.json());
 app.use((req, res, next) => {
   console.log(`Request Type:${req.method}`);
