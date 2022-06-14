@@ -33,4 +33,25 @@ const registerUser = asyncHandler(async (req, res) => {
   }
 });
 
-module.exports = { registerUser };
+//------- Função para autenticar usuário -------///
+const authUser = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+
+  const user = await User.findOne({ email });
+
+  if (user && (await user.matchPassword(password))) {
+    res.json({
+      _id: user._id,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      avatar: user.avatar,
+    });
+  } else {
+    res.status(400);
+    throw new Error("E-mail ou senha inválidos!");
+  }
+});
+
+module.exports = { registerUser, authUser };
