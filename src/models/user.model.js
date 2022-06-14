@@ -38,5 +38,17 @@ const userSchema = new mongoose.Schema(
   }
 );
 
+// ------------ Encriptando o password -------------//
+
+userSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+  const salt = await bcrypt.genSaltSync(10);
+  this.password = await bcrypt.hash(this.password, salt);
+});
+
+//---------------------------------------------------//
+
 const User = mongoose.model("User", userSchema);
-module.exports = UserModel;
+module.exports = User;

@@ -5,7 +5,7 @@ const app = express();
 
 app.use(express.json());
 
-app.use("/api/users", userRoutes);
+app.use("/users", userRoutes);
 
 app.use((req, res, next) => {
   console.log(`Request Type:${req.method}`);
@@ -14,7 +14,7 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get("/users", async (req, res) => {
+app.get("/api/users", async (req, res) => {
   try {
     const users = await User.find({});
     res.status(200).json(users);
@@ -24,7 +24,7 @@ app.get("/users", async (req, res) => {
   }
 });
 
-app.get("/users/:id", async (req, res) => {
+app.get("/api/users/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const user = await User.findById(id);
@@ -38,7 +38,7 @@ app.get("/users/:id", async (req, res) => {
   }
 });
 
-app.post("/users", async (req, res) => {
+app.post("/api/users", async (req, res) => {
   try {
     const user = await User.create(req.body);
     res.status(201).json(user);
@@ -47,7 +47,7 @@ app.post("/users", async (req, res) => {
   }
 });
 
-app.patch("/users/:id", async (req, res) => {
+app.patch("/api/users/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const user = await User.findByIdAndUpdate(id, req.body, { new: true });
@@ -57,7 +57,7 @@ app.patch("/users/:id", async (req, res) => {
   }
 });
 
-app.delete("/users/:id", async (req, res) => {
+app.delete("/api/users/:id", async (req, res) => {
   try {
     const id = req.params.id;
     const user = await User.findByIdAndRemove(id);
