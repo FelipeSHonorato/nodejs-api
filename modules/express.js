@@ -1,6 +1,6 @@
 const express = require("express");
-const User = require("../src/models/user.model");
-const userRoutes = require("../src/routes/user.routes");
+const User = require("../src/models/userModel");
+const userRoutes = require("../src/routes/userRoutes");
 const app = express();
 
 app.use(express.json());
