@@ -1,11 +1,12 @@
 const express = require("express");
-const UserModel = require("../src/models/user.model");
+const User = require("../src/models/user.model");
 const userRoutes = require("../src/routes/user.routes");
-
 const app = express();
 
-app.use("/users", userRoutes);
 app.use(express.json());
+
+app.use("/api/users", userRoutes);
+
 app.use((req, res, next) => {
   console.log(`Request Type:${req.method}`);
   console.log(`Content Type:${req.headers["content-type"]}`);
@@ -15,26 +16,31 @@ app.use((req, res, next) => {
 
 app.get("/users", async (req, res) => {
   try {
-    const users = await UserModel.find({});
+    const users = await User.find({});
     res.status(200).json(users);
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(404).send(error.message);
+    throw new Error("Nenhum usuário registrado");
   }
 });
 
 app.get("/users/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const user = await UserModel.findById(id);
+    const user = await User.findById(id);
+
+    if (user === null) {
+      throw new Error("Nenhum usuário encontrado com esse ID");
+    }
     res.status(200).json(user);
   } catch (error) {
-    res.status(500).send(error.message);
+    res.status(404).send(error.message);
   }
 });
 
 app.post("/users", async (req, res) => {
   try {
-    const user = await UserModel.create(req.body);
+    const user = await User.create(req.body);
     res.status(201).json(user);
   } catch (error) {
     res.status(500).send(error.message);
@@ -44,7 +50,7 @@ app.post("/users", async (req, res) => {
 app.patch("/users/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const user = await UserModel.findByIdAndUpdate(id, req.body, { new: true });
+    const user = await User.findByIdAndUpdate(id, req.body, { new: true });
     res.status(200).json(user);
   } catch (error) {
     res.status(500).send(error.message);
@@ -54,7 +60,7 @@ app.patch("/users/:id", async (req, res) => {
 app.delete("/users/:id", async (req, res) => {
   try {
     const id = req.params.id;
-    const user = await UserModel.findByIdAndRemove(id);
+    const user = await User.findByIdAndRemove(id);
     res.status(200).json(user);
   } catch (error) {
     res.status(500).send(error.message);
